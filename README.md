@@ -1,6 +1,8 @@
-# SBS
-- A82200 - Henrique José Carvalho Faria -  GitHub: **[Henrique](https://github.com/henriquejosefaria)** 
+# SBS (Sistemas Baseados em Similaridade)
 
+## Membros: 
+- A82200 - Henrique José Carvalho Faria -  GitHub: **[Henrique](https://github.com/henriquejosefaria)** 
+- PG40160 - Paulo Jorge da Silva Barbosa -  GitHub: **[Paulo](https://github.com/pbarbosa-gh)** 
 
 COMO VER FICHEIROS MODIFICADOS:
 git status -> mostra os ficheiros modificados 
