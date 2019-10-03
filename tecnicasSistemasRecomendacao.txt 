@@ -1,0 +1,333 @@
+
+1. Modelos básicos dos sistemas de recomendação
+
+Os modelos basicos para sistemas de recomendação utilizam dois tipos de dados: interações utilizador-item como avaliações ou hábitos de compras e informações de atributos sobre utilizadores e items como o perfil respetivo.
+Os métodos que usam o primeiro tipo de dados referido são chamados de Métodos de filtragem colaborativa, enquanto os restantes que utilizam o segundo dão pelo nome de Métodos de recomendação baseados em conteudo.
+Os métodos de recomendação baseados em conteudo na maioria dos casos também fazem uso de matrizes de avaliações embora se foquem nas de um utilizador em vez de nas de um grupo de utilizadores.
+Em Sistemas baseados em conhecimento as recomendações não são baseadas em historico de compras ou avaliações, em vez disso usam conhecimento sobre os requerimentos do utilizador.
+ Alguns sistemas de recomendação combinam estes aspetos para criar sistemas hibridos. Estes sistemas combinam as forças dos vários tipos de sistemas para ter uma boa performance independentemente dos dados disponiveis.
+
+#-------------------------------------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------------------------------------
+
+1.1 Modelos de filtros colaborativos
+
+
+Modelos de filtragem colaborativa usam avaliações de vários utilizadores para fazer recomendações.
+O principal desafio para estes modelos reside nas matrizes esparsas.
+Por exemplo, numa plataforma de música como o spotify,em que as musicas têm maior cotação dependendo do número de vezes que são ouvidas por um utilizador e em que os utilizadores só ouviram uma pequena porção de todas as músicas disponíveis, as matrizes Utilizador x Musica têm poucas avaliações visto que uma grande parte das musicas não foram ouvidas ainda.
+Nestes modelos as avaliações não existentes podem servir como input visto que aquelas que existem são suficientes para estabelecer relações de similaridade entre utilizadores e items.
+Por exemplo se dois utilizadores, Alice e Bob, em muitas músicas têm classificações parecidas o algoritmo pode estabelecer uma relação de semelhança entre eles. Desta forma o algoritmo pode prever que em músicas nas quais só um tenha dado classificação, o outro terá uma apreciação parecida. Esta forma de previsão consegue colmatar uma parte das classificações inesistentes na matriz.
+
+#############################################################################################################
+ADICIONAR???
+Furthermore, some models use carefully designed optimization techniques to create a training model in much the same way a classifier creates a training model from the labeled data. This model is then used to impute the missing values in the matrix, in the same way that a classifier imputes the missing test labels. There are two types of methods that are commonly used in collaborative filtering, which are referred to as memory-based methods and model-based methods:
+##############################################################################################################
+
+1.1.1 Métodos Baseados em Memória
+
+ Estes métodos são também conhecidos como algoritmos de filtros colaborativos de vizinhança.
+ Nestes, as avaliações que um utilizador pode dar a certos items é prevista com base na sua vizinhança.
+
+Vantagens:
+
+- Simples de implementar e as recomendações feitas são facilmente explicáveis.
+
+Desvantagens:
+
+- Não funcionam bem com matrizes de avaliações esparsas. Desta forma podem não haver classificações suficientes para garantir com rubustes que A vai gostar da recomendação feita.
+
+
+
+ A vizinhança para estes métodos pode ser definida de duas formas:
+
+•Filtros Colaborativos Baseados em Utilizadores: 
+
+Neste caso as classificações fornecidas por utilizadores com os mesmos gostos de A são usadas para as recomendações para A. 
+A ideia basica destes tipo de filtros passa por encontrar utilizadores com gostos semelhantes a A através das semelhanças entre classificações dadas por estes nas mesmas músicas. Desta forma se B tiver os mesmos gostos de A e se B der uma boa classificação a uma música C é provável que A também dê uma avaliaçõa positiva á mesma musica. Ao conjunto de utilizadores usados para inferir essas previsões dá-se o nome de vizinhança.
+Funções de similaridade são computadas entre linhas da matriz para descobrir utilizadores similares.
+
+
+• Filtros Colaborativos Baseados em Items:
+
+Para fazer previsões sobre se um utilizador A gostará de uma música B , o primeiro passo passa por determinar as X musicas mais semelhantes a B. As avaliações dadas poe A a essas X músicas é usada para inferir se A gostará da musica B.
+
+
+
+1.1.2 Métodos Baseados em Modelos
+
+Nestes modelos mineração de dados e aprendizagem máquina são usados no contexto de modelos de previsão.
+Nos casos onde o modelo é parametrizado, os parâmetros são aprendidos dentro do contexto da otimização da "framework".
+Alguns exemplos destes modelos incluem arvores de decisão, modelos baseados em regras, modelos de fator latente e métodos Bayesian.
+
+Muitos deste métodos como modelos de fatores latentes conseguem solucionar problemas de matrizes esparsas.
+ 
+##############################################################################################################
+Even though memory-based collaborative filtering algorithms are valued for their simplicity, they tend to be heuristic in nature, and they do not work well in all settings.
+##############################################################################################################
+
+
+
+1.2 Sistemas de Recomendação Baseados em Conteudo
+
+Nestes sistemas, os atributos descritivos dos items são usados para fazer recomendações.
+Otermo conteudo refere-se as decrições dos items. Nestes sistemas as classificações do utilizador, bem como os seus hábitos de compras são combinados com os atributos dos items para fazer as recomendações. 
+Por exemplo, num filme X o João deu uma classificação elevada mas não temos acesso a mais nenhuma classificação do mesmo filme feita por outros utilizadores. Nestas situações Modelos de filtros colaborativos não servem. No entanto a descrição do filme contem as mesmas palavras chave que outros filmes, logo estes podem ser sugeridos ao João.
+
+Em métodos baseados em conteudo as descrições dos items, que estão marcadas com classificações são usadas para treino para criar sugestóes especificas para o utilizador. Para cada utilizador os dados usados para treino do sistema de recomendação passam pelo estórico de compras e classificações.
+
+
+Vantagens:
+- Quando não temos dados suficientes sobre um item, podemos inferir a futura experiencia do utilizador usando as descrições do produto e comparando-as com os produtos sobre os quais o utilizador já se pronunciou. Desta forma o sistema pode contornar a falta de dados sobre as escassas clasificações de um item.
+- O utilizador novo pode especificar palavras chave no seu perfil para serem feitas recomendações com estes modelos, isto é útil em cenários "cold-start".
+
+Desvantagens:
+
+1. Em muitos casos são fornecidas recomendações obvias devido ás palavras chave ou conteudo. Caso o utilizador não tenha visto um determinado tipo de items ainda que goste dele estes não serão recomendados, reduzindo a diversidade dos items recomendados.
+
+2. Não são indicados para recomendações a utilizadores novos visto que não há um histórico com o qual treinar o sistema, e para ter um sistema de recomendação rubusto é necessário um histórico considerável.
+
+
+
+1.3  Sistemas de Recomendação Baseados em Conhecimento
+
+Estes sistemas são particularmente úteis em casos em que não há histórico de compras ou avaliações, ou cenários de cold-start.
+Para além disso a natureza das preferências de um utilizador pode evoluir com o tempo. Como estes modelos utilizam as preferências dos items conseguem acompanhar a tendência. 
+Em outros casos pode ser dificil acompanhar as preferências de um utilizador se este só estiver interessado num atributo específico do item.
+O processo de escolha de recomendações baseia-se na similaridade entre requerimentos do utilizador e descrição dos items, isto permite maior controlo do utilizador sobre o processo de recomendação podendo este explicitar o que pretende.
+
+Estes sistemas podem ser classificados com base no tipo de interface:
+
+•Sistemas de recomendação baseados em restrições: 
+ Utilizador especifica o que quer
+
+
+•
+
+1. Constraint-based recommender systems: In constraint-based systems [196, 197], users typically specify requirements or constraints (e.g., lower or upper limits) on the item
+    Approach
+Conceptual Goal
+   Input
+    Collaborative
+    Give me recommendations based on a collaborative approach that leverages the ratings and actions of my peers/myself.
+   User ratings + community ratings
+       Content- based
+    Give me recommendations based on the content (attributes) I have favored in my past ratings and actions.
+   User ratings + item attributes
+       Knowledge- based
+        Give me recommendations based on my explicit specification of the kind of content (attributes) I want.
+   User specification + item attributes + domain knowledge
+               
+1.3. BASIC MODELS OF RECOMMENDER SYSTEMS 17
+ Figure 1.6: A hypothetical example of an initial user interface for a case-based recommender)
+attributes. An example of such an interface is illustrated in Figure 1.5. Domain-specific rules are used to match the user requirements to item attributes. These rules represent the domain-specific knowledge used by the system. Such rules could take the form of domain-specific constraints on the item attributes (e.g., “Cars before year 1970 do not have cruise control.”). Furthermore, constraint-based systems often create rules relating user attributes to item attributes (e.g., “Older investors do not invest in ultra high-risk products.”). In such cases, user attributes may also be specified in the search process. Depending on the number and type of returned results, the user might have an opportunity to modify their original requirements. For example, they might relax some of their constraints when too few results are returned, or they might add more constraints. This search process is interactively repeated until the user arrives at her desired results.
+2. Case-based recommender systems: In case-based recommender systems [102, 116, 377, 558], specific cases are specified by the user as targets or anchor points. Similarity metrics are defined on the item attributes to retrieve similar items to these cases. An example of such an interface is illustrated in Figure 1.6. The similarity metrics are often carefully defined in a domain-specific way. Therefore, the similarity metrics form the domain knowledge that is used in such systems. The returned results are often used as new target cases with some interactive modifications by the user. For example, when a user sees a returned result, which is almost similar to what they want, they might re-issue a query with that target, but with some of the attributes changed to the user’s liking. This interactive process is used to guide the user towards items of interest.
+
+18 CHAPTER 1. AN INTRODUCTION TO RECOMMENDER SYSTEMS
+Note that in both cases, the system provides an opportunity to the user to change their specified requirements. However, the way in which this is done is different in the two cases. In case-based systems, examples (or cases) are used as anchor points to guide the search in combination with similarity metrics. Critiquing interfaces are particularly popular for expressing feedback in such systems, where users iteratively modify one or more attributes of a preferred item in each iteration. In constraint-based systems, rules (or constraints) are used to guide the search. The form of the guidance may often take the form of search-based systems, where users specify their constraints with a search-based interface.
+How is the interactivity in knowledge-based recommender systems achieved? This guid- ance takes place through one or more of the following methods:
+1. Conversational systems: In this case, the user preferences are determined iteratively in the context of a feedback loop. The main reason for this is that the item domain is complex and the user preferences can be determined only in the context of an iterative conversational system.
+2. Search-based systems: In search-based systems, user preferences are elicited by using a preset sequence of questions such as the following: “Do you prefer a house in a suburban area or within the city?” In some cases, specific search interfaces may be set up in order to provide the ability to specify user constraints.
+3. Navigation-based recommendation: In navigation-based recommendation, the user specifies a number of change requests to the item being currently recommended. Through an iterative set of change requests, it is possible to arrive at a desirable item. An example of a change request specified by the user, when a specific house is being recommended is as follows: “I would like a similar house about 5 miles west of the currently recommended house.” Such recommender systems are also referred to as critiquing recommender systems [417].
+It is noteworthy that both knowledge-based and content-based systems depend significantly on the attributes of the items. Because of their use of content-attributes, knowledge-based systems inherit some of the same disadvantages as content-based systems. For example, just like content-based systems, the recommendations in knowledge-based systems can some- times be obvious because the use of community (i.e., peer) ratings is not leveraged. In fact, knowledge-based systems are sometimes considered to be the “cousins” of content-based sys- tems [558]. The main difference is that content-based systems learn from past user behavior, whereas knowledge-based recommendation systems recommend based on active user speci- fication of their needs and interests. Therefore, in most of the recommendation literature, knowledge-based recommenders are considered to be a distinct category from content-based recommenders. These distinctions are based both on the goals of such systems and the kind of input data used (see Table 1.2). The different forms of knowledge-based recommender systems are discussed in Chapter 5.
+1.3.3.1 Utility-Based Recommender Systems
+In utility-based recommender systems, a utility function is defined on the product features in order to compute the probability of a user liking the item [239]. The central challenge in utility-based methods is in defining an appropriate utility function for the user at hand. It is noteworthy that all recommender schemes, whether collaborative, content-based, or knowledge-based methods, implicitly rank the recommended items on the basis of their perceived value (or utility) for the target user. In utility-based systems, this utility value is
+
+1.3. BASIC MODELS OF RECOMMENDER SYSTEMS 19
+based on a function that is known a priori. In this sense, such functions can be viewed as a kind of external knowledge. Therefore, utility-based systems can be viewed as a specific case of knowledge-based recommender systems. In fact, it will be shown in Chapter 5 that utility functions are used frequently in various ways for ranking items in knowledge-based recommender systems.
+1.3.4 Demographic Recommender Systems
+In demographic recommender systems, the demographic information about the user is lever- aged to learn classifiers that can map specific demographics to ratings or buying propensities. An early recommender system, referred to as Grundy [508], recommended books based on the library of manually assembled stereotypes. The characteristics of the user were collected with the use of an interactive dialogue. The work in [320] observed that the demographic groups from marketing research can be used to recommend items. Another work [475] makes Web page recommendations on the basis of the demographic characteristics of users that have rated a particular page highly. In many cases, demographic information can be com- bined with additional context to guide the recommendation process. This approach is related to the methodology of context-sensitive recommender systems. Some of these methods are discussed in section 8.5.3 of Chapter 8.
+More recent techniques have focused on using classifiers for making recommendations. One of the interesting systems in this respect was a technique that extracted features from user home pages in order to predict their likelihood of liking certain restaurants. Rule-based classifiers [31, 32] are often used to relate the demographic profile to buying behavior in an interactive way. While the approach in [31, 32] was not specifically used to recommend spe- cific items, it can easily be paired with a recommender system. Such recommender systems are not very different from the vanilla classification and regression modeling problem, in which feature variables correspond to the demographic profiles and the dependent variables correspond to the ratings or to the buying behavior. Although demographic recommender systems do not usually provide the best results on a stand-alone basis, they add significantly to the power of other recommender systems as a component of hybrid or ensemble mod- els. Demographic techniques are sometimes combined with knowledge-based recommender systems to increase their robustness.
+1.3.5 Hybrid and Ensemble-Based Recommender Systems
+The three aforementioned systems exploit different sources of input, and they may work well in different scenarios. For example, collaborative filtering systems rely on community ratings, content-based methods rely on textual descriptions and the target user’s own rat- ings, and knowledge-based systems rely on interactions with the user in the context of knowledge bases. Similarly, demographic systems use the demographic profiles of the users to make recommendations. It is noteworthy that these different systems use different types of input, and have different strengths and weaknesses. Some recommender systems, such as knowledge-based systems, are more effective in cold-start settings where a significant amount of data is not available. Other recommender systems, such as collaborative meth- ods, are more effective when a lot of data is available.
+In many cases where a wider variety of inputs is available, one has the flexibility of using different types of recommender systems for the same task. In such cases, many opportuni- ties exist for hybridization, where the various aspects from different types of systems are combined to achieve the best of all worlds. Hybrid recommender systems are closely related
+
+20 CHAPTER 1. AN INTRODUCTION TO RECOMMENDER SYSTEMS
+to the field of ensemble analysis, in which the power of multiple types of machine learning algorithms is combined to create a more robust model. Ensemble-based recommender sys- tems are able to combine not only the power of multiple data sources, but they are also able to improve the effectiveness of a particular class of recommender systems (e.g., collaborative systems) by combining multiple models of the same type. This scenario is not very different from that of ensemble analysis in the field of data classification. Chapter 6 studies various hybridization strategies for recommender systems.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#--------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
+
+2. Sistemas de Recomendação com Filtragem Colaborativa
+No sistema de recomendação baseado em filtragem colaborativa o foco é na relação entre usuários e itens.
+
+A similaridade dos itens é determinada pela similaridade da avaliação dos mesmos pelos usuários que tenham avaliado os mesmos itens, ou seja, se os usuários tiverem avaliado itens com notas similares, provavelmente eles tenham gostos parecidos e aceitem recomendações com base nesse critério.
+
+Como exemplo de uso do modelo de filtragem colaborativa temos:
+
+Pessoas que você talvez conheça, recomendação de amigos (Facebook)
+Recomendação de sons para escutar (Spotify)
+
+
+
+
+#--------------------------------------------------------------------------------------------------------------
+
+#--------------------------------------------------------------------------------------------------------------
+
+
+3. Sistemas de recomendação baseado em conteúdo
+
+No sistema de recomendação baseado em conteúdo o foco é nas propriedades dos itens. A similaridade de um item recomendado será medida pela similaridade com as propriedades do item que o usuário tenha adquirido ou pesquisado anteriormente.
+
+Como exemplo de uso do modelo baseado em conteúdo/item temos:
+
+Produtos recomendados com base em sua compra/pesquisa (E-commerces)
+Sons parecidos que começam a tocar após o término de sua playlist (Spotify)
+
+
+#------------------------------------------------------------------------------------------------------
+
+
+(Fonte: https://towardsdatascience.com/intro-to-recommender-system-collaborative-filtering-64a238194a26)
+(Filtros Colaborativos de utilizadores: https://dzone.com/articles/recommendation-engine-models)
+(Filtros Colaborativos de items: Source: https://medium.com/tiket-com-dev-team/build-recommendation-engine-using-graph-cbd6d8732e46)
+
+
+
+4. Content-Based
+
+Requesitos:
+-Quantidade significativa de informação de items a serem recomendados, em vez de usar as interações & feedback dos utilizadores.
+ ex: Para filmes
+ 	- Usa atributos como tipo do filme, ano de estreia, diretor, atores, ou até artigos escritos sobre o filme usando o processamento de linguagem natural. 
+
+
+Colaborative Filtering
+
+Requisitos:
+-Histórico das preferências do utilizador sobre determinados items(parte da premissa que as preferências do utilizador são estáticas e se este gostou no passado vai gostar no futuro).
+-As preferências do utilizador são classificadas em duas categorias:
+	-Rating explícito: por exemplo número de estrelas atribuido ao filme (feedback direto).
+	-Rating implicito: sugere as preferências de utilizadores indiretamente por exemplo páginas vistas,clicks, compras feitas, ouvir certos tipos de musica etc.
+
+-Método Standard (Nearest Neighborhood)
+
+-Filtros colaborativos de utilizadores
+
+  -Funcionamento da técnica:
+Exite uma matriz de n por m na qual temos as clacificações do utilizadore uᵢ, i = 1, ...n para todos os items pⱼ, j=1, …m. Querendo prever o rating rᵢⱼ do utilizador i que não viu j, temos de calcular as similaridades entre o utilizador i e todos os outros, selecionar os X com maior similaridade e utilizando a média dos ratings destes estimar o rating provável que será dado pelo utilizador pretendido.
+##------------------------------------------------------------------------------------------------------------
+ IMG 1
+##------------------------------------------------------------------------------------------------------------
+	Como há pessoas que normalmente são muito rígidas quando dão uma avaliação mesmo que gostem do filme e pessoas que tendem a dar notas mais altas mesmo que não tenham adorado o mesmo temos de eliminar o "bias". A alteração á formula anterior vista na foto abaixo serve esse propósito.
+##------------------------------------------------------------------------------------------------------------
+ IMG 2
+##------------------------------------------------------------------------------------------------------------
+
+
+-Filtros Colaborativos de items
+
+-Funcionamento da técnica:
+
+Exite uma matriz de n por m na qual temos as clacificações do utilizadore uᵢ, i = 1, ...n para todos os items pⱼ, j=1, …m. Querendo prever as séries de que o utilizador alvo pode gostar temos de calcular as similaridades entre as X séries com maior pontuação deste utilizador e as Y séries que apresentam as maiores similaridades com as preferidas do utilizador e maior cotação.
+
+Uma das vantagens dos filtros colaborativos de items é que estes apresentam maior estabilidade visto que o seu rating não é tão alterado ao longo do tempo quanto os gostos dos utilizadores.
+
+
+
+
+Limitações dos métods standard:
+
+-Não há forma deste método resolver o problema de escassez de ratings da "neighborhood" num item que se pretende avaliar para o utilizador alvo. Para além disso este método não escala tão bem com o crescente numero de utilizadores e produtos disponiveis.
+
+
+Fatorização de Matrizes
+
+Estas limitações dos métodos standard levam a que sejam implementados métodos mais avançados para decompor matrizes esparssas em matrizes com dimensões inferiores para eliminar essa escassez de ratings em produtos e melhorar o desempenho com a escalabilidade.Estes processos dão pelo nome de fatorização de matrizes.
+Para além disso há mais vantágens em usar este método, ao fatorizar as matrizes estas acabam por mostrar as preferências de um utilizador subjacentes aos filmes.
+Por exemplo: se um utilizador der boas avaliações aos filmes Avatar, Gravidade e Inception podemos deduzir com estas matrizes que este está mais inclinado a gostar de filmes de ficção cientifica e por consequentemente podem haver mais filmes fora da "neighborhood" sobre Sci-fi nos quais este utilizador pode ter interesse.
+Basicamente a utilização destas matrizes dá-nos a predisposição de um utilizador para certos atributos latentes a filmes. Mesmo que dois utilizadores não tenham dado classificações aos mesmo filmes estes atrubutos latentes permitem-os establecer uma relação entre eles.
+
+O primeiro passo para entender fatorização de matrizes é perceber a decomposição em valures singulares.
+
+Baseada em algebra Linear cada matriz real R pode ser decomposta em 3 matrizes A, B e C.
+A matriz u será aquela que representará as preferências latentes dos utilizadores.
+A matriz v será aquela que representará os tipos latentes dos vários filmes.
+A matriz Σ é aquela que contem os valores singulares da matriz original e é usada para nas outras duas saber a importancia da carateristica latente de um filme para o utilizador com base nas suas avaliações.
+
+Para ordenar os valores de Σ, decrescer o valor absoluto e truncar a matriz para as primeiras k dimensões gerando a matriz D, isto deve assegurar que as maiores variâncias da matriz original R estão presentes e a matriz D é um aproximação de R, com os erros possivelmente minimizados. 
+
+ 
+
+
+
+ U is an n × r user-latent feature matrix,
+ V is an m × r movie-latent feature matrix.
+  Σ is an r × r diagonal matrix containing the singular values of original matrix, simply representing how important a specific feature is to predict user preference.
+
+->>>>
+Explicar fatorização de matrizes não negativas
+
+When matrix R is dense, U and V could be easily factorized analytically. However, a matrix of movie ratings is super sparse. Although there are some imputation methods to fill in missing values , we will turn to a programming approach to just live with those missing values and find factor matrices U and V.
+
+ Instead of factorizing R via SVD, we are trying find U and V directly with the goal that when U and V multiplied back together the output matrix R’ is the closest approximation of R and no more a sparse matrix. This numerical approximation is usually achieved with Non-Negative Matrix Factorization for recommender systems since there is no negative values in ratings.
+See the formula below. Looking at the predicted rating for specific user and item, item i is noted as a vector qᵢ, and user u is noted as a vector pᵤ such that the dot product of these two vectors is the predicted rating for user u on item i. This value is presented in the matrix R’ at row u and column i.
+
+
+How do we find optimal qᵢ and pᵤ? Like most of machine learning task, a loss function is defined to minimize the cost of errors.
+
+rᵤᵢ is the true ratings from original user-item matrix. Optimization process is to find the optimal matrix P composed by vector pᵤ and matrix Q composed by vector qᵢ in order to minimize the sum square error between predicted ratings rᵤᵢ’ and the true ratings rᵤᵢ. Also, L2 regularization has been added to prevent overfitting of user and item vectors. It’s also quite common to add bias term which usually has 3 major components: average rating of all items μ, average rating of item i minus μ(noted as bᵤ), average rating given by user u minus u(noted as bᵢ).
+
+Optimization
+A few optimization algorithms have been popular to solve Non-Negative Factorization. Alternative Least Square is one of them. Since the loss function is non-convex in this case, there’s no way to reach a global minimum, while it still can reach a great approximation by finding local minimums. Alternative Least Square is to hold user factor matrix constant, adjust item factor matrix by taking derivatives of loss function and setting it equal to 0, and then set item factor matrix constant while adjusting user factor matrix. Repeat the process by switching and adjusting matrices back and forth until convergence. If you apply Scikit-learn NMF model, you will see ALS is the default solver to use, which is also called Coordinate Descent. Pyspark also offers pretty neat decomposition packages that provides more tuning flexibility of ALS itself.
+
+
+
