@@ -1,5 +1,7 @@
 # SBS (Sistemas Baseados em Similaridade)
 
+UC Machine Learning 
+
 ## Membros: 
 - A82200 - Henrique José Carvalho Faria -  GitHub: **[Henrique](https://github.com/henriquejosefaria)** 
 - PG40160 - Paulo Jorge da Silva Barbosa -  GitHub: **[Paulo](https://github.com/pbarbosa-gh)** 
