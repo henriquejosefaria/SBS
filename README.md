@@ -6,6 +6,7 @@ UC Machine Learning
 - A82200 - Henrique José Carvalho Faria -  GitHub: **[Henrique](https://github.com/henriquejosefaria)** 
 - PG40160 - Paulo Jorge da Silva Barbosa -  GitHub: **[Paulo](https://github.com/pbarbosa-gh)** 
 - PG33689 - Diana Sofia Araújo Carrilho - GitHub: **[Diana](https://github.com/DianaCarrilho0)**
+- PG38013 - Adriana Loureiro Vilas Boas Lopes - GitHub: **[Adriana](https://github.com/adrianalopes95)**
 
 
 COMO VER FICHEIROS MODIFICADOS:
