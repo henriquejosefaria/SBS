@@ -139,15 +139,14 @@ Estes istemas fazem uso de funções de utilidade para computar a probabilidade 
   Em muitos casos as informações demográficas podem ser combinadas com o contexto atual de informação do utilizador para guiar o proceso de recomendação.
  Embora estes sistemas por si só não forneçam as melhores recomendações, combinados com outros sistemas produzem resultados significativamente melhores.
 
-1.6 Sistemas de Recomendação baseados em montagem/hibridos
+1.6 Sistemas de Recomendação hibridos/baseados em Conjuntos
 
- Nos três sistemas de recomendação descritos anteriormente, podemos observar que estes funcionam bem em cenários diferentes. Por exemplo sistemas com filtros colaborativos dependem das avaliações da comunidade, metodos baseados em conteúdos dependem das descrições dos items e avaliações do utilizador a quem a recomendação é feita e os sistemas baseados em conhecimento depende das interações sistema utilizador. Similarmente sistemas demográficos usam perfis demográficos para fazer recomendações.
+ Nos três principais sistemas de recomendação descritos anteriormente, podemos observar que estes funcionam bem em cenários diferentes. 
+ Os sistemas com filtros colaborativos dependem das avaliações da comunidade, metodos baseados em conteúdos dependem das descrições dos items e avaliações do utilizador a quem a recomendação é feita e os sistemas baseados em conhecimento depende das interações sistema utilizador. Similarmente sistemas demográficos usam perfis demográficos para fazer recomendações.
  Como podemos observar cada uma das técnicas tem as suas vantagens e desvantagens, alguns funcionam melhor com cold-start outros quando já têm uma base sólida de avaliações do utilizador e isto leva-nos a concluir que conjugando os vários sistemas consigamos construir algoritmos mais rubustos e com melhor performance.
  Em muitos casos existe uma grande variedade de inputs o que nos dá a flexibilidade para empregar uma grande variedade de técnicas na mesma tarefa.
-
-
-
- Hybrid recommender systems are closely related to the field of ensemble analysis, in which the power of multiple types of machine learning algorithms is combined to create a more robust model. Ensemble-based recommender sys- tems are able to combine not only the power of multiple data sources, but they are also able to improve the effectiveness of a particular class of recommender systems (e.g., collaborative systems) by combining multiple models of the same type. This scenario is not very different from that of ensemble analysis in the field of data classification. Chapter 6 studies various hybridization strategies for recommender systems.
+ Os sistemas hibridos estão extremamente relacionados com os campos da análise de conjuntos nos quais o poder de múltiplos tipos de algoritmo de aprendizagem máquina é combinado para criar um modelo mais rubusto.
+ Sistemas de recomendação baseados em conjuntos são capazes de combinar não só o poder de multiplas fontes de dados como também ser altamente eficazes ao combinar multiplos modelos num só tipo. Este cenário não é muito diferente da análise de conjuntos no campo de classificação de dados.
 
 
 
