@@ -100,28 +100,12 @@ O processo de escolha de recomendações baseia-se na similaridade entre requeri
 Estes sistemas podem ser classificados com base no tipo de interface:
 
 •Sistemas de recomendação baseados em restrições: 
- Utilizador especifica o que quer
+ Utilizador especifica os atributos que pretende obter nos items que procura. Regras especificas do dominio em que se insere a busca são utilizadas. Estas regras representam o conhecimento do sistema. Certos atributos podem servir como por exemplo, um carro que tenha sido feito  antes de 1970 não terá cruise control.
 
 
 •
 
-1. Constraint-based recommender systems: In constraint-based systems [196, 197], users typically specify requirements or constraints (e.g., lower or upper limits) on the item
-    Approach
-Conceptual Goal
-   Input
-    Collaborative
-    Give me recommendations based on a collaborative approach that leverages the ratings and actions of my peers/myself.
-   User ratings + community ratings
-       Content- based
-    Give me recommendations based on the content (attributes) I have favored in my past ratings and actions.
-   User ratings + item attributes
-       Knowledge- based
-        Give me recommendations based on my explicit specification of the kind of content (attributes) I want.
-   User specification + item attributes + domain knowledge
-               
-1.3. BASIC MODELS OF RECOMMENDER SYSTEMS 17
- Figure 1.6: A hypothetical example of an initial user interface for a case-based recommender)
-attributes. An example of such an interface is illustrated in Figure 1.5. Domain-specific rules are used to match the user requirements to item attributes. These rules represent the domain-specific knowledge used by the system. Such rules could take the form of domain-specific constraints on the item attributes (e.g., “Cars before year 1970 do not have cruise control.”). Furthermore, constraint-based systems often create rules relating user attributes to item attributes (e.g., “Older investors do not invest in ultra high-risk products.”). In such cases, user attributes may also be specified in the search process. Depending on the number and type of returned results, the user might have an opportunity to modify their original requirements. For example, they might relax some of their constraints when too few results are returned, or they might add more constraints. This search process is interactively repeated until the user arrives at her desired results.
+ Such rules could take the form of domain-specific constraints on the item attributes (e.g., “Cars before year 1970 do not have cruise control.”). Furthermore, constraint-based systems often create rules relating user attributes to item attributes (e.g., “Older investors do not invest in ultra high-risk products.”). In such cases, user attributes may also be specified in the search process. Depending on the number and type of returned results, the user might have an opportunity to modify their original requirements. For example, they might relax some of their constraints when too few results are returned, or they might add more constraints. This search process is interactively repeated until the user arrives at her desired results.
 2. Case-based recommender systems: In case-based recommender systems [102, 116, 377, 558], specific cases are specified by the user as targets or anchor points. Similarity metrics are defined on the item attributes to retrieve similar items to these cases. An example of such an interface is illustrated in Figure 1.6. The similarity metrics are often carefully defined in a domain-specific way. Therefore, the similarity metrics form the domain knowledge that is used in such systems. The returned results are often used as new target cases with some interactive modifications by the user. For example, when a user sees a returned result, which is almost similar to what they want, they might re-issue a query with that target, but with some of the attributes changed to the user’s liking. This interactive process is used to guide the user towards items of interest.
 
 18 CHAPTER 1. AN INTRODUCTION TO RECOMMENDER SYSTEMS
