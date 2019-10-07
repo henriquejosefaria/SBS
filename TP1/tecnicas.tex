@@ -19,19 +19,32 @@
 \par Nestes modelos as avaliações não existentes podem servir como input visto que aquelas que existem são suficientes para estabelecer relações de similaridade entre utilizadores e items.
 \par Por exemplo se dois utilizadores, Alice e Bob, em muitas músicas têm classificações parecidas o algoritmo pode estabelecer uma relação de semelhança entre eles. Desta forma o algoritmo pode prever que em músicas nas quais só um tenha dado classificação, o outro terá uma apreciação parecida. Esta forma de previsão consegue colmatar uma parte das classificações inesistentes na matriz.
 
-There are two types of methods that are commonly used in collaborative filtering, which are referred to as memory-based methods and model-based methods:
 
 \hfill
 \subsubsection{ Filtros Colaborativos Baseados em Utilizadores}
 \hfill
  \par Neste caso as classificações fornecidas por utilizadores com os mesmos gostos de A são usadas para as recomendações para A. 
- \par A ideia basica destes tipo de filtros passa por encontrar utilizadores com gostos semelhantes a A através das semelhanças entre classificações dadas por estes nas mesmas músicas. Desta forma se B tiver os mesmos gostos de A e se B der uma boa classificação a uma música C é provável que A também dê uma avaliaçõa positiva á mesma musica. Ao conjunto de utilizadores usados para inferir essas previsões dá-se o nome de vizinhança.
- \par Funções de similaridade são computadas entre linhas da matriz para descobrir utilizadores similares.
-
+ \par A ideia basica destes tipo de filtros passa por encontrar utilizadores com gostos semelhantes a A através das semelhanças entre classificações dadas por estes nas mesmas músicas. Desta forma se B tiver os mesmos gostos de A e se B der uma boa classificação a uma música C é provável que A também dê uma avaliação positiva á mesma musica. Ao conjunto de utilizadores usados para inferir essas previsões dá-se o nome de vizinhança.
+ \par Funções de similaridade são computadas entre linhas da matriz para descobrir utilizadores similares.\newline
 \hfill
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.4]{filtroutilizadoressimilares.png}
+  \caption {Filtro Baseado em Utilizadores Similares}
+  \label {fig01}
+\end{figure}
+
 \subsubsection{ Filtros Colaborativos Baseados em Items}
 \hfill
- \par Para fazer previsões sobre se um utilizador A gostará de uma música B , o primeiro passo passa por determinar as X musicas mais semelhantes a B. As avaliações dadas poe A a essas X músicas é usada para inferir se A gostará da musica B.\newline
+ \par Para fazer previsões sobre se um utilizador A gostará de uma música B , o primeiro passo passa por determinar as X musicas mais semelhantes a B. As avaliações dadas poe A a essas X músicas é usada para inferir se A gostará da musica B.
+ \par Este método é facil de implementar, no entanto peca por falta de personalização.~\cite{ref_article1}.\newline
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.3]{filtroitemssimilares.png}
+  \caption{Filtro Baseado em Items Similares}
+  \label{fig02}
+\end{figure}
 
 
 \par A vizinhança para estes métodos pode ser definida de duas formas:
@@ -69,6 +82,13 @@ There are two types of methods that are commonly used in collaborative filtering
 \par Por exemplo, num filme X o João deu uma classificação elevada mas não temos acesso a mais nenhuma classificação do mesmo filme feita por outros utilizadores. Nestas situações Modelos de filtros colaborativos não servem. No entanto a descrição do filme contem as mesmas palavras chave que outros filmes, logo estes podem ser sugeridos ao João.
 \par Em métodos baseados em conteudo as descrições dos items, que estão marcadas com classificações são usadas para treino para criar sugestóes especificas para o utilizador. Para cada utilizador os dados usados para treino do sistema de recomendação passam pelo estórico de compras e classificações.\newline
 
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[scale = 0.4]{knoledgebasedsistems.jpeg}
+    \caption{Sistema de Recomendação Baseado em Conteúdo}
+    \label{fig03}
+\end{figure}
 
 \textbf{Vantagens:}\hfill
 \hfill
@@ -119,7 +139,7 @@ Para além disso, este sistema não aprende com o comportamento passado do utili
  \par Em muitos casos as informações demográficas podem ser combinadas com o contexto atual de informação do utilizador para guiar o proceso de recomendação.
  \par Embora estes sistemas por si só não forneçam as melhores recomendações, combinados com outros sistemas produzem resultados significativamente melhores.
 \hfill
-\subsection{Sistemas de Recomendação hibridos/Agragados}
+\subsection{Sistemas de Recomendação hibridos/Agregados}
 \hfill
  \par Nos três principais sistemas de recomendação descritos anteriormente, podemos observar que estes funcionam bem em cenários diferentes. 
  \par Os sistemas com filtros colaborativos dependem das avaliações da comunidade, metodos baseados em conteúdos dependem das descrições dos items e avaliações do utilizador a quem a recomendação é feita e os sistemas baseados em conhecimento depende das interações sistema utilizador. Similarmente sistemas demográficos usam perfis demográficos para fazer recomendações.
