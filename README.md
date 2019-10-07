@@ -18,3 +18,40 @@ git add -A -> adiciona todos os ficheiros modificados
 git commit -m "mensagem de envio" -> diz ao sistema que os ficheiros estão prontos para mandar  
 git pull -> puxa fucheiros do git  
 git push -> empurra os ficheiros para o git  
+
+
+### Trabalho
+
+Este é um trabalho realizado no ambito da disciplina de Sistemas baseados em Similaridades.  
+  
+  
+  
+Neste trabalho abordaram-se os vários paradigmas dos sistemas de referências existentes.  
+  
+```
+Técnicas utilizadas por sistemas de recomendação
+|
++-- Sistemas de filtros colaborativos 
+|                     |
+|                     +-- Filtros Colaborativos Baseados em Utilizadores
+|                     |
+|                     \-- Filtros Colaborativos Baseados em Items
+|
++-- Sistemas de Recomendação Baseados em Conteudo
+|
++-- Sistemas de Recomendação Baseados em Conhecimento
+|                     |
+|                     +-- Sistemas de recomendação baseados em restrições
+|                     |
+|                     +-- Sistemas de recomendação baseados em casos
+|                     |
+|                     \-- Sistemas de recomendação baseados em utilidade
+|
++-- Sistemas de Recomendação Demográficos
+|
++--Sistemas de Recomendação hibridos/Agregados
+|
+...
+
+```
+
