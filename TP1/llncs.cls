@@ -80,7 +80,7 @@
 \def\abstractname{Abstract.}
 \def\ackname{Acknowledgement.}
 \def\andname{and}
-\def\lastandname{\unskip, and}
+\def\lastandname{ and}
 \def\appendixname{Appendix}
 \def\chaptername{Chapter}
 \def\claimname{Claim}
@@ -91,7 +91,7 @@
 \def\examplename{Example}
 \def\exercisename{Exercise}
 \def\figurename{Fig.}
-\def\keywordname{{\bf Keywords:}}
+\def\keywordname{{\bf Palavras-chave:}}
 \def\indexname{Index}
 \def\lemmaname{Lemma}
 \def\contriblistname{List of Contributors}

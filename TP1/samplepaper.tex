@@ -5,11 +5,15 @@
 \documentclass[runningheads]{llncs}
 %
 \usepackage{graphicx}
-%% Language and font encodings
 \usepackage[portuges]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{verbatim}
-
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+%
+% If you use the hyperref package, please uncomment the following line
+% to display URLs in blue roman font according to Springer's eBook style:
+% \renewcommand\UrlFont{\color{blue}\rmfamily}
 \setcounter{secnumdepth}{6}
 \renewcommand\theparagraph{\Alph{paragraph}}
  
@@ -26,44 +30,12 @@
 \counterwithin{paragraph}{subsubsection}
 \counterwithin{subparagraph}{paragraph}
 \makeatother
- 
-% Used for displaying a sample figure. If possible, figure files should
-% be included in EPS format.
-%
-% If you use the hyperref package, please uncomment the following line
-% to display URLs in blue roman font according to Springer's eBook style:
-% \renewcommand\UrlFont{\color{blue}\rmfamily}
 
 \begin{document}
-%
-\title{Sistemas de Recomendação: Introdução e Aplicações Comerciais\thanks{Supported by organization x.}}
-%
-%\titlerunning{Abbreviated paper title}
-% If the paper title is too long for the running head, you can set
-% an abbreviated paper title here
-%
-%\author{First Author\inst{1}\orcidID{0000-1111-2222-3333} \and
-%Second Author\inst{2,3}\orcidID{1111-2222-3333-4444} \and
-%Third Author\inst{3}\orcidID{2222--3333-4444-5555}}
-%
-\authorrunning{F. Author et al.}
-% First names are abbreviated in the running head.
-% If there are more than two authors, 'et al.' is used.
-%
-\institute{Universidade do Minho, Gualtar, Portugal}
-%
-% typeset the header of the contribution
-%
-\begin{abstract}
-The abstract should briefly summarize the contents of the paper in
-150--250 words.
+\input{title.tex}
 
-\keywords{Sistemas de Recomendação  \and Second keyword \and Another keyword.}
-\end{abstract}
-%
-%
-%
-
+\newpage
+\hfill
 % Aqui começam os capitulos abordados pelo trabalho
 
 \input{definicaoHistoria.tex}
@@ -73,14 +45,9 @@ The abstract should briefly summarize the contents of the paper in
 \input{algoritmos.tex}
 \input{netflix.tex}
 \input{spotify.tex}
-%
-% the environments 'definition', 'lemma', 'proposition', 'corollary',
-% 'remark', and 'example' are defined in the LLNCS documentclass as well.
-%
-\begin{proof}
-Proofs, examples, and remarks have the initial word in italics,
-while the following text appears in normal font.
-\end{proof}
+
+
+\newpage
 For citations of references, we prefer the use of square brackets
 and consecutive numbers. Citations using labels or the author/year
 convention are also acceptable. The following bibliography provides
@@ -100,24 +67,10 @@ and a homepage~\cite{ref_url1}. Multiple citations are grouped
 % \bibliography{mybibliography}
 %
 \begin{thebibliography}{8}
-\bibitem{ref_article1}
-Author, F.: Article title. Journal \textbf{2}(5), 99--110 (2016)
-
-\bibitem{ref_lncs1}
-Author, F., Author, S.: Title of a proceedings paper. In: Editor,
-F., Editor, S. (eds.) CONFERENCE 2016, LNCS, vol. 9999, pp. 1--13.
-Springer, Heidelberg (2016). \doi{10.10007/1234567890}
 
 \bibitem{ref_book1}
-Author, F., Author, S., Author, T.: Book title. 2nd edn. Publisher,
-Location (1999)
+Author, Charu C. Aggarwal, T.: Recommender Systems: The Textbook. Publisher, Springer International Publishing AG Switzerland (2016)
 
-\bibitem{ref_proc1}
-Author, A.-B.: Contribution title. In: 9th International Proceedings
-on Proceedings, pp. 1--2. Publisher, Location (2010)
 
-\bibitem{ref_url1}
-LNCS Homepage, \url{http://www.springer.com/lncs}. Last accessed 4
-Oct 2017
 \end{thebibliography}
 \end{document}
