@@ -1,0 +1,150 @@
+\section{Técnicas utilizadas por sistemas de recomendação}
+
+\begin{center}
+\normalsize{\bfseries Modelos básicos dos sistemas de recomendação}\hfill
+\end{center}
+
+
+\par Os modelos basicos para sistemas de recomendação utilizam dois tipos de dados: interações utilizador-item como avaliações ou hábitos de compras e informações de atributos sobre utilizadores e items como o perfil respetivo~\cite{ref_book1}.
+\par Os métodos que usam o primeiro tipo de dados referido são chamados de Métodos de filtragem colaborativa, enquanto os restantes que utilizam o segundo dão pelo nome de Métodos de recomendação baseados em conteudo~\cite{ref_book1}.
+\par Os métodos de recomendação baseados em conteudo na maioria dos casos também fazem uso de matrizes de avaliações embora se foquem nas de um utilizador em vez de nas de um grupo de utilizadores~\cite{ref_book1}.
+\par Em Sistemas baseados em conhecimento as recomendações não são baseadas em historico de compras ou avaliações, em vez disso usam conhecimento sobre os requerimentos do utilizador~\cite{ref_book1}.
+\par Alguns sistemas de recomendação combinam estes aspetos para criar sistemas hibridos. Estes sistemas combinam as forças dos vários tipos de sistemas para ter uma boa performance independentemente dos dados disponiveis~\cite{ref_book1}.
+\hfill
+\subsection{Sistemas de filtros colaborativos}
+\hfill
+\par Modelos de filtragem colaborativa usam avaliações de vários utilizadores para fazer recomendações.
+\par O principal desafio para estes modelos reside nas matrizes esparsas.
+\par Por exemplo, numa plataforma de música como o spotify,em que as musicas têm maior cotação dependendo do número de vezes que são ouvidas por um utilizador e em que os utilizadores só ouviram uma pequena porção de todas as músicas disponíveis, as matrizes Utilizador x Musica têm poucas avaliações visto que uma grande parte das musicas não foram ouvidas ainda.
+\par Nestes modelos as avaliações não existentes podem servir como input visto que aquelas que existem são suficientes para estabelecer relações de similaridade entre utilizadores e items.
+\par Por exemplo se dois utilizadores, Alice e Bob, em muitas músicas têm classificações parecidas o algoritmo pode estabelecer uma relação de semelhança entre eles. Desta forma o algoritmo pode prever que em músicas nas quais só um tenha dado classificação, o outro terá uma apreciação parecida. Esta forma de previsão consegue colmatar uma parte das classificações inesistentes na matriz.
+
+
+\hfill
+\subsubsection{ Filtros Colaborativos Baseados em Utilizadores}
+\hfill
+ \par Neste caso as classificações fornecidas por utilizadores com os mesmos gostos de A são usadas para as recomendações para A. 
+ \par A ideia basica destes tipo de filtros passa por encontrar utilizadores com gostos semelhantes a A através das semelhanças entre classificações dadas por estes nas mesmas músicas. Desta forma se B tiver os mesmos gostos de A e se B der uma boa classificação a uma música C é provável que A também dê uma avaliação positiva á mesma musica. Ao conjunto de utilizadores usados para inferir essas previsões dá-se o nome de vizinhança.
+ \par Funções de similaridade são computadas entre linhas da matriz para descobrir utilizadores similares.\newline
+\hfill
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.4]{filtroutilizadoressimilares.png}
+  \caption {Filtro Baseado em Utilizadores Similares}
+  \label {fig01}
+\end{figure}
+
+\subsubsection{ Filtros Colaborativos Baseados em Items}
+\hfill
+ \par Para fazer previsões sobre se um utilizador A gostará de uma música B , o primeiro passo passa por determinar as X musicas mais semelhantes a B. As avaliações dadas poe A a essas X músicas é usada para inferir se A gostará da musica B.
+ \par Este método é facil de implementar, no entanto peca por falta de personalização.~\cite{ref_article1}.\newline
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.3]{filtroitemssimilares.png}
+  \caption{Filtro Baseado em Items Similares}
+  \label{fig02}
+\end{figure}
+
+
+\par A vizinhança para estes métodos pode ser definida de duas formas:
+
+\begin{center}
+\normalsize{\bfseries Métodos Baseados em Memória}\hfill
+\end{center}
+ \par Estes métodos são também conhecidos como algoritmos de filtros colaborativos de vizinhança.
+ \par Nestes, as avaliações que um utilizador pode dar a certos items é prevista com base na sua vizinhança.\newline
+
+
+\textbf{Vantagens:}\hfill
+\hfill
+\par 1. Simples de implementar e as recomendações feitas são facilmente explicáveis.\newline
+
+
+\textbf{Desvantagens:}\hfill
+\hfill
+\par 1. Não funcionam bem com matrizes de avaliações esparsas. Desta forma podem não haver classificações suficientes para garantir com rubustes que A vai gostar da recomendação feita.\newline
+
+\begin{center}
+\normalsize{\bfseries Métodos Baseados em Modelos}\hfill
+\end{center}
+\hfill
+\par Nestes modelos mineração de dados e aprendizagem máquina são usados no contexto de modelos de previsão.
+\par Nos casos onde o modelo é parametrizado, os parâmetros são aprendidos dentro do contexto da otimização da "framework".
+\par Alguns exemplos destes modelos incluem arvores de decisão, modelos baseados em regras, modelos de fator latente e métodos Bayesian.
+\par Muitos deste métodos como modelos de fatores latentes conseguem solucionar problemas de matrizes esparsas.
+
+\hfill
+\subsection{Sistemas de Recomendação Baseados em Conteudo}
+\hfill
+\par Nestes sistemas, os atributos descritivos dos items são usados para fazer recomendações.
+\par O termo conteudo refere-se as decrições dos items. Nestes sistemas as classificações do utilizador, bem como os seus hábitos de compras são combinados com os atributos dos items para fazer as recomendações. 
+\par Por exemplo, num filme X o João deu uma classificação elevada mas não temos acesso a mais nenhuma classificação do mesmo filme feita por outros utilizadores. Nestas situações Modelos de filtros colaborativos não servem. No entanto a descrição do filme contem as mesmas palavras chave que outros filmes, logo estes podem ser sugeridos ao João.
+\par Em métodos baseados em conteudo as descrições dos items, que estão marcadas com classificações são usadas para treino para criar sugestóes especificas para o utilizador. Para cada utilizador os dados usados para treino do sistema de recomendação passam pelo estórico de compras e classificações.\newline
+
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[scale = 0.4]{knoledgebasedsistems.jpeg}
+    \caption{Sistema de Recomendação Baseado em Conteúdo}
+    \label{fig03}
+\end{figure}
+
+\textbf{Vantagens:}\hfill
+\hfill
+\par 1. Quando não temos dados suficientes sobre um item, podemos inferir a futura experiencia do utilizador usando as descrições do produto e comparando-as com os produtos sobre os quais o utilizador já se pronunciou. Desta forma o sistema pode contornar a falta de dados sobre as escassas clasificações de um item.\newline
+\hfill
+\par 2. O utilizador novo pode especificar palavras chave no seu perfil para serem feitas recomendações com estes modelos, isto é útil em cenários "cold-start".\newline
+
+\textbf{Desvantagens:}\hfill
+\hfill
+\par 1. Em muitos casos são fornecidas recomendações obvias devido ás palavras chave ou conteudo. Caso o utilizador não tenha visto um determinado tipo de items ainda que goste dele estes não serão recomendados, reduzindo a diversidade dos items recomendados.\newline
+\hfill
+\par 2. Não são indicados para recomendações a utilizadores novos visto que não há um histórico com o qual treinar o sistema, e para ter um sistema de recomendação rubusto é necessário um histórico considerável.\newline
+
+
+\subsection{Sistemas de Recomendação Baseados em Conhecimento}
+\hfill
+\par Estes sistemas são particularmente úteis em casos em que não há histórico de compras ou avaliações, ou cenários de cold-start.
+\par Para além disso a natureza das preferências de um utilizador pode evoluir com o tempo. Como estes modelos utilizam as preferências dos items conseguem acompanhar a tendência. 
+\par Em outros casos pode ser dificil acompanhar as preferências de um utilizador se este só estiver interessado num atributo específico do item.
+\par O processo de escolha de recomendações baseia-se na similaridade entre requerimentos do utilizador e descrição dos items, isto permite maior controlo do utilizador sobre o processo de recomendação podendo este explicitar o que pretende.
+\par Estes sistemas podem ser classificados com base no tipo de interface:
+\hfill
+\subsubsection{Sistemas de recomendação baseados em restrições}
+\hfill
+ \par Utilizador especifica os atributos que pretende obter nos items que procura. Regras especificas do dominio em que se insere a busca são utilizadas. Estas regras representam o conhecimento do sistema. Os atributos (regras) adaptam-se á situação podendo servir como restrição como por exemplo, um carro que tenha sido feito  antes de 1970 não terá cruise control. Outras regras podem ser restrições no que diz respeito ao utilizador por exemplo investidores experientes não fazem investimentos de alto risco. 
+ \par Posteriormente a uma pesquisa o utilizador pode modificar os requesitos originais, adicionando mais caso os resultados da pesquisa tenham sido muito diversos ou retirando caso os resultados não tenham sido suficientes, este processo é iterativo até o utilizador estar satisfeito com os resultados.  
+
+\hfill
+\subsubsection{Sistemas de recomendação baseados em casos}
+\hfill
+\par Neste tipo de sistemas o utilizador especifica casos  em vez de preferências como pontos de referência por exemplo em vez de especificar requisitos para uma casa refere uma casa que lhe agrade e procura por semelhantes. As métricas de semelhança são cuidadosamente definidas no contexto do dominio em que se inserem, formando assim a base de conhecimento do sistema. Os resultados obtidos são comummente usados como novas referências para novas pesquisas do utilizador.  Por exemplo, caso um resultado de pesquisa se assemelhe ao que o utilizador pretende, este pode selecionar esse resultado preferêncial juntamente com alguns requerimentos extra na próxima pesquisa. Este processo guia o utilizador até ao item pretendido.
+\par Note-se que em ambos os casos, em bora de formas diferentes, o sistema fornece a oportunidade ao utilizador para mudar os requerimentos.
+No primeiro, as regras(requerimentos) são usados para guiar a busca com base nas similaridades com outros artigos. Já nos sistemas baseados em casos o objeto de referência fornecido pelo utilizador é utilizado para calcular a similaridade com outros items.
+\par Os sistemas baseados em conhecimento partilham algumas das desvantagens dos sistemas baseados em conteudos. 
+\par Por exemplo, este sistema falha no requisito de mostrar novos conteudos que o utilizador não requesite mas dos quais pode gostar.
+Para além disso, este sistema não aprende com o comportamento passado do utilizador mas depende apenas dos requisitos que este inserir na pesquisa.
+
+\hfill
+\subsubsection{Sistemas de recomendação baseados em utilidade}
+\hfill
+\par Estes istemas fazem uso de funções de utilidade para computar a probabilidade do utilizador gostar do item em questão. O desafio ao aplicar estes métodos reside em definir uma função de utilizade apropriada para o utilizador visado. Estas funções podem ser vistas como conhecimento externo, logo estes sistemas podem ser vistos como casos especificos de sistemas de recomendação baseados em conhecimento, partilhando assim das suas vantagens e desvantagens.
+
+\hfill
+\subsection{Sistemas de Recomendação Demográficos}\hfill
+
+
+ \par Nestas técnicas a localização do utilizador alvo é utilizada para saber a propensão de uma pessoa a comprar determinado produto, por exemplo em zonas de portugal em que a água tenha muito calcário as pessoas são mais propensas a comprar detergentes para a máquina de lavar roupa que previnam o acúmulo de calcário nas ditas máquinas.
+ \par Em muitos casos as informações demográficas podem ser combinadas com o contexto atual de informação do utilizador para guiar o proceso de recomendação.
+ \par Embora estes sistemas por si só não forneçam as melhores recomendações, combinados com outros sistemas produzem resultados significativamente melhores.
+\hfill
+\subsection{Sistemas de Recomendação hibridos/Agregados}
+\hfill
+ \par Nos três principais sistemas de recomendação descritos anteriormente, podemos observar que estes funcionam bem em cenários diferentes. 
+ \par Os sistemas com filtros colaborativos dependem das avaliações da comunidade, metodos baseados em conteúdos dependem das descrições dos items e avaliações do utilizador a quem a recomendação é feita e os sistemas baseados em conhecimento depende das interações sistema utilizador. Similarmente sistemas demográficos usam perfis demográficos para fazer recomendações.
+ \par Como podemos observar cada uma das técnicas tem as suas vantagens e desvantagens, alguns funcionam melhor com cold-start outros quando já têm uma base sólida de avaliações do utilizador e isto leva-nos a concluir que conjugando os vários sistemas consigamos construir algoritmos mais rubustos e com melhor performance.
+ \par Em muitos casos existe uma grande variedade de inputs o que nos dá a flexibilidade para empregar uma grande variedade de técnicas na mesma tarefa.
+ \par Os sistemas hibridos estão extremamente relacionados com os campos da análise de conjuntos nos quais o poder de múltiplos tipos de algoritmo de aprendizagem máquina é combinado para criar um modelo mais rubusto.
+ \par Sistemas de recomendação agregados são capazes de combinar não só o poder de multiplas fontes de dados como também ser altamente eficazes ao combinar multiplos modelos num só tipo. Este cenário não é muito diferente da análise de conjuntos no campo de classificação de dados.
+

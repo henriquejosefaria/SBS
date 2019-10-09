@@ -1,0 +1,82 @@
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.20 of 2017/10/04
+%
+\documentclass[runningheads]{llncs}
+%
+\usepackage{graphicx}
+\usepackage[portuges]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{verbatim}
+\usepackage{float}
+%Path relative to the .tex file containing the \includegraphics command
+\graphicspath{ {./images/} }
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+%
+% If you use the hyperref package, please uncomment the following line
+% to display URLs in blue roman font according to Springer's eBook style:
+% \renewcommand\UrlFont{\color{blue}\rmfamily}
+\setcounter{secnumdepth}{6}
+\renewcommand\theparagraph{\Alph{paragraph}}
+ 
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                      {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                      {0.0001pt \@plus .2ex}%
+                                      {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\z@}%
+                                      {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                      {0.0001pt \@plus .2ex}%
+                                      {\normalfont\normalsize\bfseries}}
+ 
+\counterwithin{paragraph}{subsubsection}
+\counterwithin{subparagraph}{paragraph}
+\makeatother
+
+\begin{document}
+\input{title.tex}
+
+\newpage
+\hfill
+% Aqui começam os capitulos abordados pelo trabalho
+
+\input{definicaoHistoria.tex}
+\input{tecnicas.tex}
+\input{vantagens.tex}
+\input{algoritmos.tex}
+\input{netflix.tex}
+\input{spotify.tex}
+
+
+\newpage
+
+%
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted and formatted in the correct style.
+%
+% \bibliographystyle{splncs04}
+% \bibliography{mybibliography}
+%
+\begin{thebibliography}{8}
+
+\bibitem{ref_intro1}
+https://www.itu.int/en/ITU-D/Statistics/Pages/stat/default.aspx
+\bibitem{ref_history1}
+https://thenextweb.com/contributors/2019/01/30/digital-trends-2019-every-single-stat-you-need-to-know-about-the-internet
+\bibitem{ref_history2}
+http://rejoiner.com/resources/amazon-recommendations-secret-selling-online/
+\bibitem{ref_book1}
+Author, Charu C. Aggarwal, T.: Recommender Systems: The Textbook. Publisher, Springer International Publishing AG Switzerland (2016)
+\bibitem{ref_book2}
+Author: Alexander Tuzhilin and Gediminas Adomavicius, T.: "Toward the Next Generation of Recommender Systems: A Survey of the State-of-the-Art and Possible Extensions", pp. 734-749, vol. 17, 2005.
+\bibitem{ref_article1}
+Author: Anil Poriya, Neev Patel, Rekha Sharma and Tanvi Bhagat , T.: "Non-Personalized Recommender Systems and Userbased Collaborative Recommender Systems",International Journal of Applied Information Systems, Volume 6 – November 9, March 2014
+\bibitem{ref_url1}
+https://www.itu.int/en/ITU-D/Statistics/Pages/stat/default.aspx 
+
+
+\end{thebibliography}
+\end{document}
