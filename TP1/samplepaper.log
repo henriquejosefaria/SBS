@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.9)  9 OCT 2019 15:49
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.7)  9 OCT 2019 15:36
+>>>>>>> a5a22986732c36b68ded6b21cfded95b450b1327
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -288,11 +292,11 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 22.
- [1
+) [1
 
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) [2]
-(./definicaoHistoria.tex) (./tecnicas.tex [3]
-<./images/filtroutilizadoressimilares.png, id=19, 428.60126pt x 173.64874pt>
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./definicaoHistoria.tex) (./tecnicas.tex [2]
+<./images/filtroutilizadoressimilares.png, id=16, 428.60126pt x 173.64874pt>
 File: ./images/filtroutilizadoressimilares.png Graphic file (type png)
 <use ./images/filtroutilizadoressimilares.png>
 Package pdftex.def Info: ./images/filtroutilizadoressimilares.png  used on inpu
@@ -303,15 +307,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--35
 
  []
 
-[4 <./images/filtroutilizadoressimilares.png>]
+[3 <./images/filtroutilizadoressimilares.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 40--41
 
  []
 
-<./images/filtroitemssimilares.png, id=24, 632.3625pt x 422.57875pt>
-File: ./images/filtroitemssimilares.png Graphic file (type png)
-<use ./images/filtroitemssimilares.png>
-Package pdftex.def Info: ./images/filtroitemssimilares.png  used on input line 
+<./images/filtroitenssimilares.png, id=21, 632.3625pt x 422.57875pt>
+File: ./images/filtroitenssimilares.png Graphic file (type png)
+<use ./images/filtroitenssimilares.png>
+Package pdftex.def Info: ./images/filtroitenssimilares.png  used on input line 
 44.
 (pdftex.def)             Requested size: 189.7102pt x 126.7746pt.
 
@@ -329,18 +333,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
-[5 <./images/filtroitemssimilares.png (PNG copy)>]
+[4 <./images/filtroitenssimilares.png (PNG copy)>]
 Underfull \hbox (badness 10000) in paragraph at lines 83--84
 
  []
 
-<./images/knoledgebasedsistems.jpeg, id=28, 640.3925pt x 480.79625pt>
+<./images/knoledgebasedsistems.jpeg, id=25, 640.3925pt x 480.79625pt>
 File: ./images/knoledgebasedsistems.jpeg Graphic file (type jpg)
 <use ./images/knoledgebasedsistems.jpeg>
 Package pdftex.def Info: ./images/knoledgebasedsistems.jpeg  used on input line
  88.
 (pdftex.def)             Requested size: 256.15245pt x 192.31508pt.
-[6 <./images/knoledgebasedsistems.jpeg>]
+[5 <./images/knoledgebasedsistems.jpeg>]
 Underfull \hbox (badness 10000) in paragraph at lines 95--97
 
  []
@@ -360,26 +364,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
-[7] [8]) (./vantagens.tex [9]
+[6] [7]) (./vantagens.tex [8]
 Overfull \hbox (1.5177pt too wide) in paragraph at lines 19--20
 []\T1/cmr/m/n/10 Receção de pro-du-tos/conteúdos que pos-sam in-te-res-sar ao u
 ti-li-za-dor (de forma
  []
 
-) (./algoritmos.tex) (./netflix.tex) (./spotify.tex) [10]
+) (./algoritmos.tex) (./netflix.tex
+
+LaTeX Warning: Command \c invalid in math mode on input line 5.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 5.
+
+Missing character: There is no ç in font cmr10!
+Missing character: There is no ã in font cmr10!
+[9]) (./spotify.tex [10]) [11]
 Underfull \hbox (badness 10000) in paragraph at lines 68--69
 []\T1/cmr/m/n/9 https://thenextweb.com/contributors/2019/01/30/digital-trends-2
 019-every-
  []
 
+<<<<<<< HEAD
 [11] (./samplepaper.aux) ) 
+=======
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+[]\T1/cmr/m/n/9 http://medialabufrj.net/blog/2019/05/sistema-de-recomendacao-ne
+tflix-
+ []
+
+[12] (./samplepaper.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+>>>>>>> a5a22986732c36b68ded6b21cfded95b450b1327
 Here is how much of TeX's memory you used:
- 2772 strings out of 492616
- 37471 string characters out of 6129481
- 119545 words of memory out of 5000000
- 6637 multiletter control sequences out of 15000+600000
+ 2777 strings out of 492616
+ 37545 string characters out of 6129481
+ 120549 words of memory out of 5000000
+ 6642 multiletter control sequences out of 15000+600000
  10058 words of font info for 23 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
+<<<<<<< HEAD
  41i,7n,25p,782b,264s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/c
 m-super/cm-super-t1.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/
@@ -391,9 +419,22 @@ er/sfbx1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super
 frm0900.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfr
 m1000.pfb>
 Output written on samplepaper.pdf (11 pages, 238497 bytes).
+=======
+ 41i,7n,25p,1111b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></u
+sr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr
+/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/l
+ocal/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/loc
+al/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local
+/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on samplepaper.pdf (12 pages, 258932 bytes).
+>>>>>>> a5a22986732c36b68ded6b21cfded95b450b1327
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 80 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
