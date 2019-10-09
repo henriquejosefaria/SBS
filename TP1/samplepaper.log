@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.9)  9 OCT 2019 16:01
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.7)  9 OCT 2019 16:03
+>>>>>>> c3c61a511e5006aaa52057017ef6795edb1543f6
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -391,48 +395,19 @@ tflix-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+Underfull \hbox (badness 10000) in paragraph at lines 79--81
 []\T1/cmr/m/n/9 https://meiobit.com/363707/spotify-algoritmo-sendo-alimentado-p
 ara-identificar-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+Underfull \hbox (badness 10000) in paragraph at lines 79--81
 \T1/cmr/m/n/9 e-diferenciar-musicas-tristes-e-alegres-meta-identificar-estado-e
 mocional-do-
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.81 ...cal/data/sistemas_recomendacao/index.html}
-                                                  
-? 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 81.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 81.
 
-! LaTeX Error: Command \item invalid in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.82 \bibitem{ref_url5}
-                        \url{http://igti.com.br/blog/como-funcionam-os-siste...
-
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.82 \bibitem{ref_url5}
-                        \url{http://igti.com.br/blog/como-funcionam-os-siste...
-
+<<<<<<< HEAD
 ? 
 
 ! LaTeX Error: Something's wrong--perhaps a missing \item.
@@ -453,9 +428,20 @@ l.82 \bibitem{ref_url5}
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
+=======
+Overfull \hbox (34.57233pt too wide) in paragraph at lines 81--82
+[]\T1/cmr/m/n/9 https://www.ibm.com/developerworks/br/local/data/sistemas_recom
+endacao/index.html 
+ []
+
+[12] (./samplepaper.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+>>>>>>> c3c61a511e5006aaa52057017ef6795edb1543f6
 
  
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  2792 strings out of 492616
  37823 string characters out of 6129481
  120608 words of memory out of 5000000
@@ -464,3 +450,28 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  41i,7n,25p,1111b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!
+=======
+ 2781 strings out of 492616
+ 37585 string characters out of 6129481
+ 120608 words of memory out of 5000000
+ 6646 multiletter control sequences out of 15000+600000
+ 10058 words of font info for 23 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,7n,25p,1111b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></u
+sr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr
+/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/l
+ocal/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/loc
+al/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local
+/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on samplepaper.pdf (12 pages, 259349 bytes).
+PDF statistics:
+ 80 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+
+>>>>>>> c3c61a511e5006aaa52057017ef6795edb1543f6
