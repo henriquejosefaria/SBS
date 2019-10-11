@@ -199,7 +199,7 @@
 \global\let\@textbottom\relax}}
 
 \renewcommand\small{%
-   \@setfontsize\small\@ixpt{10}%
+   \@setfontsize\small\@ixpt{9.5}%
    \abovedisplayskip 8.5\p@ \@plus3\p@ \@minus4\p@
    \abovedisplayshortskip \z@ \@plus2\p@
    \belowdisplayshortskip 4\p@ \@plus2\p@ \@minus2\p@
