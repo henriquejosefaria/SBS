@@ -77,9 +77,9 @@
 \hfill
 \subsection{Sistemas de Recomendação Baseados em Conteúdo}
 \hfill
-\par Nestes sistemas, os atributos descritivos dos itens são usados para fazer recomendações.
-\par O termo conteúdo refere-se as decrições dos itens. Nestes sistemas as classificações do utilizador, bem como os seus hábitos de compras são combinados com os atributos dos itens para fazer as recomendações. 
-\par Por exemplo, num filme X o João deu uma classificação elevada mas não temos acesso a mais nenhuma classificação do mesmo filme feita por outros utilizadores. Nestas situações Modelos de filtros colaborativos não servem. No entanto a descrição do filme contém as mesmas palavras chave que outros filmes, logo estes podem ser sugeridos ao João.
+\par Nestes sistemas, os atributos descritivos dos itens são usados para fazer recomendações. O termo conteúdo refere-se as decrições dos itens. 
+\par As classificações do utilizador, bem como os seus hábitos de compras são combinados com os atributos dos itens para fazer as recomendações. 
+\par Por exemplo, num filme X o João atribuiu uma classificação elevada mas não temos acesso a mais nenhuma classificação do mesmo filme feita por outros utilizadores. Nestas situações Modelos de filtros colaborativos não servem. No entanto, a descrição do filme contém as mesmas palavras chave que outros filmes, logo estes podem ser sugeridos ao João.
 \par Em métodos baseados em conteúdo as descrições dos itens, que estão marcadas com classificações são usadas para treino para criar sugestões especificas para o utilizador. Para cada utilizador os dados usados para treino do sistema de recomendação passam pelo histórico de compras e classificações.\newline
 
 
@@ -92,15 +92,15 @@
 
 \textbf{Vantagens:}\hfill
 \hfill
-\par 1. Quando não temos dados suficientes sobre um item, podemos inferir a futura experiência do utilizador usando as descrições do produto e comparando-as com os produtos sobre os quais o utilizador já se pronunciou. Desta forma o sistema pode contornar a falta de dados sobre as escassas clasificações de um item.\newline
+\par 1. Quando não existem dados suficientes sobre um item, podemos inferir a futura experiência do utilizador usando as descrições do produto e comparando-as com os produtos sobre os quais o utilizador já se pronunciou. Desta forma o sistema pode contornar a falta de dados sobre as escassas clasificações de um item.\newline
 \hfill
 \par 2. O utilizador novo pode especificar palavras chave no seu perfil para serem feitas recomendações com estes modelos, isto é útil em cenários "cold-start".\newline
 
 \textbf{Desvantagens:}\hfill
 \hfill
-\par 1. Em muitos casos são fornecidas recomendações óbvias devido às palavras chave ou conteúdo. Caso o utilizador não tenha visto um determinado tipo de itens ainda que goste dele estes não serão recomendados, reduzindo a diversidade dos itens recomendados.\newline
+\par 1. Caso o utilizador não tenha visto um determinado tipo de itens ainda que goste dele estes não serão recomendados, reduzindo a diversidade dos itens recomendados.\newline
 \hfill
-\par 2. Não são indicados para recomendações a utilizadores novos visto que não há um histórico com o qual treinar o sistema, e para ter um sistema de recomendação robusto é necessário um histórico considerável.\newline
+\par 2. Não são indicados para recomendações a novos utilizadores, visto que não há um histórico com o qual se pode treinar o sistema, uma vez que para ter um SR robusto é necessário ter um histórico.\newline
 
 
 \subsection{Sistemas de Recomendação Baseados em Conhecimento}
