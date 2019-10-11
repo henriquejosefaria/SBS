@@ -104,37 +104,41 @@
 \subsection{Sistemas de Recomendação Baseados em Conhecimento}
 \hfill
 \par Estes sistemas são particularmente úteis em casos em que não há histórico de compras ou avaliações, ou cenários de cold-start.
-\par Para além disso a natureza das preferências de um utilizador pode evoluir com o tempo. Como estes modelos utilizam as preferências dos itens conseguem acompanhar a tendência. 
-\par Em outros casos pode ser difícil acompanhar as preferências de um utilizador se este só estiver interessado num atributo específico do item.
+\par Para além disso a natureza das preferências de um utilizador pode evoluir com o tempo. Como estes modelos utilizam as preferências dos itens conseguem acompanhar a tendência.
+\par Em outros casos pode ser dificil acompanhar as preferências de um utilizador se este apenas estiver interessado num atributo específico do item.
 \par O processo de escolha de recomendações baseia-se na similaridade entre requerimentos do utilizador e descrição dos itens, isto permite maior controlo do utilizador sobre o processo de recomendação podendo este explicitar o que pretende.
-\par Estes sistemas podem ser classificados com base no tipo de interface:
+\par Estes sistemas podem ser classificados com base no tipo de interface: 
 \hfill
+
+
 \subsubsection{Sistemas de recomendação baseados em restrições}
 \hfill
- \par Utilizador especifica os atributos que pretende obter nos itens que procura. Regras especificas do domínio em que se insere a busca são utilizadas. Estas regras representam o conhecimento do sistema. Os atributos (regras) adaptam-se à situação podendo servir como restrição como por exemplo, um carro que tenha sido feito  antes de 1970 não terá cruise control. Outras regras podem ser restrições no que diz respeito ao utilizador por exemplo investidores experientes não fazem investimentos de alto risco. 
- \par Posteriormente a uma pesquisa o utilizador pode modificar os requesitos originais, adicionando mais caso os resultados da pesquisa tenham sido muito diversos ou retirando caso os resultados não tenham sido suficientes, este processo é iterativo até o utilizador estar satisfeito com os resultados.  
-
+\newline
+\par Utilizador especifica os atributos que pretende obter nos itens que procura. Regras especificas do dominio em que se insere a busca são utilizadas. Estas regras representam o conhecimento do sistema. Outras regras podem ser restrições no que diz respeito ao utilizador, por exemplo investidores experientes não fazem investimentos de alto risco. 
+\par Posteriormente a uma pesquisa, o utilizador pode modificar os requisitos originais. Este processo é iterativo até o utilizador estar satisfeito com os resultados.
 \hfill
+
+
 \subsubsection{Sistemas de recomendação baseados em casos}
 \hfill
-\par Neste tipo de sistemas o utilizador específica casos  em vez de preferências como pontos de referência por exemplo em vez de especificar requisitos para uma casa refere uma casa que lhe agrade e procura por semelhantes. As métricas de semelhança são cuidadosamente definidas no contexto do domínio em que se inserem, formando assim a base de conhecimento do sistema. Os resultados obtidos são comumente usados como novas referências para novas pesquisas do utilizador.  Por exemplo, caso um resultado de pesquisa se assemelhe ao que o utilizador pretende, este pode selecionar esse resultado preferêncial juntamente com alguns requerimentos extra na próxima pesquisa. Este processo guia o utilizador até ao item pretendido.
-\par Note-se que em ambos os casos, em bora de formas diferentes, o sistema fornece a oportunidade ao utilizador para mudar os requerimentos.
-No primeiro, as regras(requerimentos) são usados para guiar a busca com base nas similaridades com outros artigos. Já nos sistemas baseados em casos o objeto de referência fornecido pelo utilizador é utilizado para calcular a similaridade com outros itens.
-\par Os sistemas baseados em conhecimento partilham algumas das desvantagens dos sistemas baseados em conteúdos. 
-\par Por exemplo, este sistema falha no requisito de mostrar novos conteúdos que o utilizador não requesite mas dos quais pode gostar.
-Para além disso, este sistema não aprende com o comportamento passado do utilizador mas depende apenas dos requisitos que este inserir na pesquisa.
-
+\newline
+\par Neste tipo de sistemas, o utilizador especifica casos em vez de preferências como pontos de referência. As métricas de semelhança são cuidadosamente definidas no contexto do dominio em que se inserem, formando assim a base de conhecimento do sistema. Os resultados obtidos são comummente usados como referências para novas pesquisas do utilizador. Por exemplo, caso um resultado de pesquisa se assemelhe ao que o utilizador pretende, este pode selecionar esse resultado preferêncial juntamente com alguns requerimentos extra na próxima pesquisa. Este processo guia o utilizador até ao item pretendido.
+\par O sistema fornece sempre a oportunidade ao utilizador para mudar os requerimentos. No primeiro caso, as regras são usadas para guiar a busca com base nas similaridades com outros artigos. Já nos sistemas baseados em casos, o objeto de referência fornecido pelo utilizador é utilizado para calcular a similaridade com outros itens.
+\par Os sistemas baseados em conhecimento partilham algumas das desvantagens
+dos sistemas baseados em conteúdos, tendo como exemplo a falha de apresentar novo conteúdo que o utilizador não requisite, mas possa gostar. Para além disso, este sistema não aprende com o comportamento passado do utilizador, mas depende apenas dos requisitos que este inserir na pesquisa.
 \hfill
+
+
 \subsubsection{Sistemas de recomendação baseados em utilidade}
 \hfill
-\par Estes sistemas fazem uso de funções de utilidade para computar a probabilidade do utilizador gostar do item em questão. O desafio ao aplicar estes métodos reside em definir uma função de utilidade apropriada para o utilizador visado. Estas funções podem ser vistas como conhecimento externo, logo estes sistemas podem ser vistos como casos específicos de sistemas de recomendação baseados em conhecimento, partilhando assim das suas vantagens e desvantagens.
-
+\newline
+\par Sistemas que fazem uso de funções de utilidade para computar a probabilidade de um utilizador gostar do item em questão.
+O desafio ao aplicar estes métodos reside em definir a função apropriada para o utilizador visado. Estas funções podem ser vistas como conhecimento externo, resultando na contemplação dos sistemas como casos especificos de sistemas de recomendação baseados em conhecimento, partilhando assim das suas vantagens e desvantagens.
 \hfill
+
 \subsection{Sistemas de Recomendação Demográficos}\hfill
-
-
- \par Nestas técnicas a localização do utilizador alvo é utilizada para saber a propensão de uma pessoa a comprar determinado produto. Por exemplo, em zonas de portugal em que a água tenha muito calcário, as pessoas são mais propensas a comprar detergentes para a máquina de lavar roupa que previnam o acúmulo de calcário nas ditas máquinas. Como se constata as informações demográficas podem ser combinadas com o contexto atual de informação do utilizador para guiar o proceso de recomendação.
- \par Embora estes sistemas por si só não forneçam as melhores recomendações, combinados com outros sistemas produzem resultados significativamente melhores.
+\par Nestas técnicas a localização do utilizador alvo é utilizada para saber a tendência de uma pessoa a comprar determinado produto. Por exemplo, nas zonas do país em que água é mais calcária que o normal, a tendência é de comprar detergentes que previnam o acúmulo deste mineral nas máquinas de lavar roupa.Em muitos casos, as informações demográficas podem ser combinadas com o contexto atual de informação do utilizador para guiar o proceso de recomendação.
+\par Embora estes sistemas por si só não forneçam as melhores recomendações, combinados com outros sistemas produzem resultados significativamente melhores.
 \hfill
 \subsection{Sistemas de Recomendação hibridos/Agregados}
 \hfill
