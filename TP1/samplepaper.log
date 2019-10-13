@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.4)  13 OCT 2019 08:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.4)  13 OCT 2019 09:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -323,16 +323,7 @@ Overfull \hbox (1.5177pt too wide) in paragraph at lines 19--20
 ti-li-za-dor (de forma
  []
 
-) (./netflix.tex [7]
-
-LaTeX Warning: Command \c invalid in math mode on input line 6.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 6.
-
-Missing character: There is no ç in font cmr10!
-Missing character: There is no ã in font cmr10!
-) (./spotify.tex [8])
+) (./netflix.tex [7]) (./spotify.tex [8])
 Underfull \hbox (badness 10000) in paragraph at lines 66--67
 []\T1/cmr/m/n/9 https://thenextweb.com/contributors/2019/01/30/digital-trends-2
 019-every-
@@ -382,9 +373,9 @@ ibrary/texlive/2019basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk><
 /usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
 fb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 9.pfb>
-Output written on samplepaper.pdf (9 pages, 208185 bytes).
+Output written on samplepaper.pdf (9 pages, 207953 bytes).
 PDF statistics:
- 364 PDF objects out of 1000 (max. 8388607)
+ 365 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
